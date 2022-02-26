@@ -217,7 +217,7 @@ function Counter() {
     }
 }
 
-// because counter() is function constructor so we use "new" keyword
+// because counter() is a function constructor so we use "new" keyword
 var counter1 = new Counter();
 counter1.incrementCounter();
 counter1.incrementCounter();
@@ -225,4 +225,28 @@ counter1.incrementCounter();
 counter1.incrementCounter();
 counter1.decrementCounter();
 counter1.decrementCounter();
+
+
+/**
+ * relation b/w garbage collector, memory leaks, & closures
+ */
+
+/**
+ * here function b() forms a closure with variables x & z
+ * but it is only referring to variable x in its definition.
+ * so the new browser engines like chrome v8 will free up the
+ * memory of variable z from the closure of function b() because
+ * it is no longer accessed.
+ */
+function a() {
+    var x = 10, z = 20;
+    function b() {
+        console.log(x);
+    }
+    return b;
+}
+var y = a();
+//........more line of code
+
+y();
 
