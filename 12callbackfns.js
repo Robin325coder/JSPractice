@@ -1,15 +1,15 @@
-// // callback function
-// /**
-//  * here y() is a callback function because
-//  * it is passed as an argument to x()
-//  */
-// function x(param) {
+// callback function
+/**
+ * here y() is a callback function because
+ * it is passed as an argument to x()
+ */
+function x(param) {
 
-// }
+}
 
-// x(function y() {
+x(function y() {
 
-// });
+});
 
 /**
  * understanding asynchronous programming
